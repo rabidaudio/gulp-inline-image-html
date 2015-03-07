@@ -1,0 +1,14 @@
+{
+  "name": "gulp-inline-image",
+  "version": "0.0.0",
+  "description": "A gulp task for inlining images in HTML",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "inline-images": "^1.0.1"
+  }
+}

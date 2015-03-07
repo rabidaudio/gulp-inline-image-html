@@ -1,0 +1,1 @@
+var inlineimg = require('inline-images');
