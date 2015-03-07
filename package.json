@@ -4,7 +4,7 @@
   "description": "A gulp task for inlining images in HTML",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node_modules/.bin/mocha test/test.js"
   },
   "author": "",
   "license": "MIT",
@@ -15,9 +15,15 @@
   },
   "devDependencies": {
     "chai": "^2.1.1",
+    "event-stream": "^3.3.0",
     "gulp": "^3.8.11",
     "mocha": "^2.2.0",
-    "rimraf": "^2.3.1"
+    "vinyl": "^0.4.6"
   },
-  "keywords": ["gulpplugin", "inline", "image", "base64"]
+  "keywords": [
+    "gulpplugin",
+    "inline",
+    "image",
+    "base64"
+  ]
 }
