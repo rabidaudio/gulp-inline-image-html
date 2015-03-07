@@ -1,5 +1,6 @@
 var inlineimg = require('inline-images');
 var gutil = require('gulp-util');
+var through = require('through2');
 var PluginError = gutil.PluginError;
 
 const PLUGIN_NAME = 'gulp-inline-image';

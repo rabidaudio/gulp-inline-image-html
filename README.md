@@ -17,7 +17,7 @@ This is mearly a wrapper for [inline-images](https://www.npmjs.com/package/inlin
 
 ```javascript
 var gulp = require('gulp');
-var inlineimg = require('gulp-inlie-image');
+var inlineimg = require('gulp-inlie-image-html');
 
 gulp.task('default', function () {
   gulp.src('src/**/*.html')
