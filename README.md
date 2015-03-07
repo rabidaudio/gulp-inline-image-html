@@ -11,7 +11,7 @@ becomes
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEU...."/>
 ```
 
-This is mearly a wrapper for [inline-images](https://www.npmjs.com/package/inline-images) by [Max Ogden](@maxogden).
+This is mearly a wrapper for [inline-images](https://www.npmjs.com/package/inline-images) by [Max Ogden](http://github.com/maxogden).
 
 ### Usage
 
@@ -21,6 +21,6 @@ var inlineimg = require('gulp-inlie-image');
 
 gulp.task('default', function () {
   gulp.src('src/**/*.html')
-    .pipe(inlineimg('src'))  // takes in the directory to use when looking for images
+    .pipe(inlineimg('src'))  // takes in the directory to use as the root when looking for images
     .pipe(gulp.dest('dest/'));
 ```
