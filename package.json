@@ -1,7 +1,7 @@
 {
   "name": "gulp-inline-image",
   "version": "0.0.0",
-  "description": "A gulp task for inlining images in HTML",
+  "description": "A gulp task for inlineing images in HTML",
   "main": "index.js",
   "scripts": {
     "test": "node_modules/.bin/mocha test/test.js"
