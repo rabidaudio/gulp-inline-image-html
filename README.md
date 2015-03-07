@@ -1,4 +1,4 @@
-## gulp-inline-image
+## gulp-inline-image-html
 
 A [Gulp](http://gulpjs.com) task for inlining images inside HTML. For example,
 
