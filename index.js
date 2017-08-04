@@ -1,5 +1,6 @@
 var inlineimg = require('inline-images');
 var gutil = require('gulp-util');
+var through = require('through2');
 var fs = require('fs');
 var PluginError = gutil.PluginError;
 
