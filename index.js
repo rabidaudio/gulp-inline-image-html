@@ -1,29 +1,36 @@
-var inlineimg = require('inline-images');
-var gutil = require('gulp-util');
+var inlineImages = require('inline-images');
+var gulpUtil = require('gulp-util');
 var through = require('through2');
-var fs = require('fs');
-var PluginError = gutil.PluginError;
 
 const PLUGIN_NAME = 'gulp-inline-image';
 
-function inlineImage(dir) {
-
-  var stream = through.obj(function(file, enc, cb) {
-    if (fs.existsSync(file)) {
-      if (file.isStream()) {
-        this.emit('error', new PluginError(PLUGIN_NAME, 'Streams not supported!'));
-        return cb();
-      }
-      if (file.isBuffer()) {
-        file.contents = inlineimg(file.contents, dir);
-        this.push(file);
-        return cb();
-      }
+//
+// From the rvagg/through2 documentation:
+//
+// "A minimal implementation should call the callback function to
+// indicate that the transformation is done, even if that transformation
+// means discarding the chunk."
+//
+// See: https://github.com/rvagg/through2/tree/4383b10#transformfunction
+//
+function makeTransformFunc(baseDir) {
+  return function(chunk, enc, cb) {
+    if (chunk.isStream()) {
+      this.emit('error', new gulpUtil.PluginError(PLUGIN_NAME, 'Streams not supported!'));
+      return cb();
     }
-    return cb(null, file); //no-op
-  });
 
-  return stream;
+    if (chunk.isBuffer()) {
+      chunk.contents = inlineImages(chunk.contents, baseDir);
+      this.push(chunk);
+      return cb();
+    }
+
+    // Pass through
+    return cb(null, chunk);
+  }
 }
 
-module.exports = inlineImage;
+module.exports = function(baseDir) {
+  return through.obj(makeTransformFunc(baseDir));
+}

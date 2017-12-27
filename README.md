@@ -8,19 +8,23 @@ A [Gulp](http://gulpjs.com) task for inlining images inside HTML. For example,
 becomes
 
 ```html
-<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEU...."/>
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEU..."/>
 ```
 
-This is mearly a wrapper for [inline-images](https://www.npmjs.com/package/inline-images) by [Max Ogden](http://github.com/maxogden).
+This is a wrapper for [inline-images](https://www.npmjs.com/package/inline-images) by [Max Ogden](http://github.com/maxogden).
 
 ### Usage
 
-```javascript
+```js
 var gulp = require('gulp');
-var inlineimg = require('gulp-inline-image');
+var inlineimg = require('gulp-inline-image-html');
 
 gulp.task('default', function () {
   gulp.src('src/**/*.html')
-    .pipe(inlineimg('src'))  // takes in the directory to use as the root when looking for images
+    .pipe(inlineimg('src')) // optionally pass in the base directory for looking for images
     .pipe(gulp.dest('dest/'));
 ```
+
+### License
+
+MIT
