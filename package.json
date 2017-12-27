@@ -1,7 +1,7 @@
 {
   "name": "gulp-inline-image-html",
   "version": "0.2.2",
-  "description": "A gulp task for inlineing images in HTML",
+  "description": "A gulp task for inlining images in HTML",
   "main": "index.js",
   "scripts": {
     "test": "mocha test/test.js"
@@ -9,14 +9,14 @@
   "author": "Charles Julian Knight",
   "license": "MIT",
   "dependencies": {
-    "gulp-util": "^3.0.4",
+    "gulp-util": "^3.0.8",
     "inline-images": "^1.0.1",
     "through2": "^2.0.3"
   },
   "devDependencies": {
-    "chai": "^2.1.1",
-    "mocha": "^2.2.0",
-    "vinyl": "^0.4.6"
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1",
+    "vinyl": "^2.1.0"
   },
   "keywords": [
     "gulpplugin",
