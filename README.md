@@ -27,4 +27,4 @@ gulp.task('default', function () {
 
 ### License
 
-MIT
+[MIT](LICENSE)
