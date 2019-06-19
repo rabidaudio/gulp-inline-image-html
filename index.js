@@ -1,8 +1,8 @@
-var inlineImages = require('inline-images');
-var PluginError = require('plugin-error');
-var through = require('through2');
+var inlineImages = require('inline-images')
+var PluginError = require('plugin-error')
+var through = require('through2')
 
-const PLUGIN_NAME = 'gulp-inline-image';
+const PLUGIN_NAME = 'gulp-inline-image'
 
 //
 // From the rvagg/through2 documentation:
@@ -13,24 +13,24 @@ const PLUGIN_NAME = 'gulp-inline-image';
 //
 // See: https://github.com/rvagg/through2/tree/4383b10#transformfunction
 //
-function makeTransformFunc(baseDir) {
-  return function(chunk, enc, cb) {
+function makeTransformFunc (baseDir) {
+  return function (chunk, enc, cb) {
     if (chunk.isStream()) {
-      this.emit('error', new PluginError(PLUGIN_NAME, 'Streams not supported!'));
-      return cb();
+      this.emit('error', new PluginError(PLUGIN_NAME, 'Streams not supported!'))
+      return cb()
     }
 
     if (chunk.isBuffer()) {
-      chunk.contents = inlineImages(chunk.contents, baseDir);
-      this.push(chunk);
-      return cb();
+      chunk.contents = inlineImages(chunk.contents, baseDir)
+      this.push(chunk)
+      return cb()
     }
 
     // Pass through
-    return cb(null, chunk);
+    return cb(null, chunk)
   }
 }
 
-module.exports = function(baseDir) {
-  return through.obj(makeTransformFunc(baseDir));
+module.exports = function (baseDir) {
+  return through.obj(makeTransformFunc(baseDir))
 }

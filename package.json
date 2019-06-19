@@ -4,7 +4,8 @@
   "description": "A gulp task for inlining images in HTML",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test/test.js"
+    "test": "mocha test/test.js",
+    "lint": "standard"
   },
   "author": "Charles Julian Knight",
   "license": "MIT",
@@ -16,6 +17,7 @@
   "devDependencies": {
     "chai": "^4.1.2",
     "mocha": "^4.0.1",
+    "standard": "^12.0.1",
     "vinyl": "^2.1.0"
   },
   "keywords": [
@@ -30,7 +32,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/rabidaudio/gulp-inline-image.git"
+    "url": "git+https://github.com/rabidaudio/gulp-inline-image.git"
+  },
+  "standard": {
+    "env": [
+      "mocha"
+    ]
   },
   "bugs": {
     "url": "https://github.com/rabidaudio/gulp-inline-image/issues"
