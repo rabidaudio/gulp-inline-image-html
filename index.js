@@ -1,5 +1,5 @@
 var inlineImages = require('inline-images');
-var gulpUtil = require('gulp-util');
+var PluginError = require('plugin-error');
 var through = require('through2');
 
 const PLUGIN_NAME = 'gulp-inline-image';
@@ -16,7 +16,7 @@ const PLUGIN_NAME = 'gulp-inline-image';
 function makeTransformFunc(baseDir) {
   return function(chunk, enc, cb) {
     if (chunk.isStream()) {
-      this.emit('error', new gulpUtil.PluginError(PLUGIN_NAME, 'Streams not supported!'));
+      this.emit('error', new PluginError(PLUGIN_NAME, 'Streams not supported!'));
       return cb();
     }
 
