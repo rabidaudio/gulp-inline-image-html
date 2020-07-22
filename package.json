@@ -1,6 +1,6 @@
 {
   "name": "gulp-inline-image-html",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "A gulp task for inlining images in HTML",
   "main": "index.js",
   "scripts": {
